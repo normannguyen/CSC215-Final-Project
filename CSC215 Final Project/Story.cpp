@@ -1,5 +1,5 @@
 //Norman Nguyen
-//Program: Learning Functions with Interactive Fiction using MULTIPLE FILES
+//Program: Learning Functions with Interactive Fiction using MULTIPLE FILES and Class
 //Story file
 
 #include <iostream>
@@ -7,9 +7,11 @@
 #include "Story.h"
 #include "Person.h"
 #include "NPC.h"
-
+//Standard Library
 using namespace std;
+//Boolean
 bool playAgain = false;
+//Welcome Message
 void WelcomeUser()
 {
 	cout << "Welcome to the new version of The (Unaccurate) Storytelling!\n\n";
@@ -33,9 +35,6 @@ int GetUserNumber(string type)
 {
 	//Integer
 	int usersNumber;
-	//Pointers
-	int *userNum = &usersNumber;
-
 	//Output String
 	cout << type;
 	//Get user input
@@ -64,14 +63,16 @@ void LineFormat()
 	cout << "\n";
 }
 void normalWords(string swapWords1, string swapWords2);
-void swapedWords(string& swapWords1, string& swapWords2);
+void swappedWords(string& swapWords1, string& swapWords2);
 void StoryTime()
 {
+	//Do While Loop
 	do
 	{
-		Person Narrator;
-		NPC NPC;
+		//Child Class from the NPC class
+		NPC Enemy;
 		string Name = GetUserName("\n\Enter your Name: ");
+		//String Pointers
 		string *thisName = &Name;
 		//Type Number
 		int Number = GetUserNumber("\n\Enter your Number: ");
@@ -98,51 +99,61 @@ void StoryTime()
 		/*
 		 * SECOND
 		 */
+		//Normal Words
 		normalWords(Word4, Word5);
 		cout << "\nI decided to see what's inside the cabin, it turns out it was a hill billy who invited me in.";
 		cout << "\nThe hill billy looked at me like I never seen one before, so he decided to " + Word3 + " at me to get off his property.\n\n";		
 		cout << Word4 << " " << Word5 << ": ";
-		NPC.Talk();
+		//The NPC Class talks
+		Enemy.Talk();
 		system("pause");
-		swapedWords(Word4, Word5);
+		//Word Swapped
+		swappedWords(Word4, Word5);
 		cout << "\nI ran outside again from getting chased by wild animals to getting chased by a hill billy.";
 		cout << "\nAs I was running a sheriff sees me running from that crazed " + Word4 + " " + Word5 +".";
 		cout << "\nThe sheriff said, 'Hold it right there!' this is the crook we've been looking for.";
 		cout << "\n\nIn the End, I saved from my wildest stories.";
 		cout << "\n\nThe End.\n\n";
+		/*
+		 * Wanna Play Again?
+		 */
 		string playerChoice;
 		//Enter your choice of yes or no.
 		cout << "Would you like to play again? Y/N" << endl;
 		cout << "Also, your name is stored in this address: "  << &Name << "\nAnd your pointer address: " << &thisName << endl;
-		cout << "And your number: " << &Number << "\nAnd your pointer address: " << &thisNumber << endl;
-
+		cout << "And your number: " << &Number << "\Along with your pointer address: " << &thisNumber << endl;
+		//Enter your choice
+		cout << "Choice: ";
 		cin >> playerChoice;
-		
+		//If Statement which means Yes
 		if (playerChoice == "y" || playerChoice == "Y")
 		{
 			playAgain = true;
 		}
-		//No
+		//Else If with NO
 		else if (playerChoice == "n" || playerChoice == "N")
 		{
 			//Allow simulation to finish
 			cout << "\nSimulation Ended, proceed to exit." << endl;
 			system("pause");
 		}
+		//Else if you left it blank
 		else
 		{
 			cout << "Please input Y or N..." << endl;
-			cin >> playAgain;
+			playAgain = false;
 		}
 	} while (playAgain == true);
 }
+//Normal Words Reference
 void normalWords(string xWord, string yWords)
 {
 	string Words = xWord;
 	xWord = yWords;
 	yWords = Words;
 }
-void swapedWords(string& xWord, string& yWords)
+//Swapped Words Function
+void swappedWords(string& xWord, string& yWords)
 {
 	string Words = xWord;
 	xWord = yWords;

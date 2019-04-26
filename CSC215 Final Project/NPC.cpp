@@ -1,3 +1,6 @@
+//Norman Nguyen
+//Program: NPC Class File.
+//Story file
 #include "NPC.h"
 #include <iostream>
 #include <string>

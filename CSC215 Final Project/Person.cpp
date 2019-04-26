@@ -1,3 +1,6 @@
+//Norman Nguyen
+//Program: Person Class
+//Story file
 #include "Person.h"
 #include <iostream>
 #include <string>
