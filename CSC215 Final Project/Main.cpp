@@ -1,6 +1,6 @@
 //Norman Nguyen
-//Program: Learning Functions with Interactive Fiction using MULTIPLE FILES
-
+//Program: Learning Functions with Interactive Fiction using MULTIPLE FILES as it's the FINAL PROJECT, just have fun.
+//Main File
 #include <iostream>
 #include <string>
 #include "Story.h"

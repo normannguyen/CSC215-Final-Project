@@ -1,6 +1,6 @@
 //Norman Nguyen
 //Program: Learning Functions with Interactive Fiction using MULTIPLE FILES
-//Header File
+//Story Header File
 
 #pragma once
 //Void Welcome User

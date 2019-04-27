@@ -9,10 +9,14 @@ using namespace std;
 class Person
 {
 public:
+	//Constructor: What's created
 	Person();
 	void Talk(string storyLine);
+	//String GetName
 	string GetName();
+	//SetName
 	void SetName(string name);
+	//Destructor: What's deleted
 	~Person();
 private:
 	string Name;

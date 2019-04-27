@@ -14,9 +14,9 @@ bool playAgain = false;
 //Welcome Message
 void WelcomeUser()
 {
-	cout << "Welcome to the new version of The (Unaccurate) Storytelling!\n\n";
+	cout << "Welcome to the newest version of The (Unaccurate) Storytelling!\n\n";
 	cout << "Much like the first game, you will be entering text from your choosing and it will print out the story." << endl;
-	cout << "Keep in mind, this doesn't affect story, this is on imagination." << endl;
+	cout << "Keep in mind, this doesn't affect story, this is on imagination.\n" << endl;
 }
 //Get Text from the user input
 string GetUserText(string type)
@@ -69,8 +69,13 @@ void StoryTime()
 	//Do While Loop
 	do
 	{
+		//Person Class
+		Person Narrator;
 		//Child Class from the NPC class
 		NPC Enemy;
+		Narrator.SetName("Narrator");
+		cout << Narrator.GetName() << ": ";
+		Narrator.Talk("Hey, I'm the narrator of the story, keep in mind that you're going to type the words. Think of it as Mad Libs. Have fun playing!");
 		string Name = GetUserName("\n\Enter your Name: ");
 		//String Pointers
 		string *thisName = &Name;
@@ -85,6 +90,7 @@ void StoryTime()
 		/*
 		 * FIRST
 		 */
+		cout << Narrator.GetName() << ": ";
 		cout << "Hello, my name is " + Name + ". My story today is unusual to tell" << ".";
 		cout << "\n\nOnce upon a time, I was " + Word2 + " around the woods minding my business.";
 		cout << "\nAll the sudden a unknown creature has caught my attention where I decided to see it for myself.";
@@ -101,7 +107,8 @@ void StoryTime()
 		 */
 		//Normal Words
 		normalWords(Word4, Word5);
-		cout << "\nI decided to see what's inside the cabin, it turns out it was a hill billy who invited me in.";
+		cout << Narrator.GetName() << ": ";
+		cout << "\n\nI decided to see what's inside the cabin, it turns out it was a hill billy who invited me in.";
 		cout << "\nThe hill billy looked at me like I never seen one before, so he decided to " + Word3 + " at me to get off his property.\n\n";		
 		cout << Word4 << " " << Word5 << ": ";
 		//The NPC Class talks
